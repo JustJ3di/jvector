@@ -1,5 +1,5 @@
-#ifndef MAP
-#define MAP
+#ifndef JVECTOR
+#define JVECTOR
 #include <stdio.h>
 #include <stdlib.h>
 

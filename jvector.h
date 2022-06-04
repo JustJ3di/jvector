@@ -7,12 +7,13 @@
 #define jvector(type) type  *
 
 #define get_size(vect)                                              \
-    ((vect) ? ((size_t *)v)[-1]:(size_t)0)
+    ((vect) ? ((size_t *)vect)[-1]:(size_t)0)
 
 #define pop(vect)                                                   \
     do{                                                             \
         size_t *nuovo = realloc(((size_t *)vect-1),                 \
         sizeof(size_t)+sizeof(vect[0])*(*((size_t *)vect-1)));      \
+        if(!nuovo)exit(EXIT_FAILURE);                               \
         *nuovo -= 1;                                                \
         vect = (void *)((size_t *)nuovo + 1);                       \
     }while(0)

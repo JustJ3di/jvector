@@ -5,15 +5,34 @@ int main()
     
     jvector(float) v = NULL;
 
-    push_back(v, 2.3);
-    push_back(v, 2.1441);
-    push_back(v,2.31);
-    push_back(v,0.231);
 
+    for (size_t i = 0; i < 100; i++)
+    {
+        push_back(v, 2*0.1*i);
+    }
+    
 
-    printf("%f %ld\n", v[1], get_size(v));
+    printf("%f %ld\n", v[11], get_size(v));
 
     delete_vector(v);
+
+    jvector(char) vect = NULL;
+
+    for (size_t i = 0; i < 1000; i++)
+    {
+        push_back(vect, 'a');
+    }
+    
+    for (size_t i = 0; i < 230; i++)
+    {
+        pop(vect);
+    }
+
+    printf("%ld\n", get_size(vect));
+
+    delete_vector(vect);
+    
+
 
     return 0;
 }
